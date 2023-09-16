@@ -1,5 +1,6 @@
 package com.utils.owner;
 
+import com.utils.enums.BrowserType;
 import org.aeonbits.owner.Config;
 
 import java.util.List;
