@@ -12,7 +12,7 @@ public class TestData {
     @Column(name = "testcase", index = 0)
     private String testcase;
 
-    @Column(name = "browser", index = 1)
+    @Column(name = "browser", index = 1, converterClass = StringToBrowserTypeConverter.class)
     private BrowserType browser;
 
     @Column(name = "firstname", index = 2)
@@ -41,5 +41,33 @@ public class TestData {
                 ", date=" + date +
                 ", phonenumber='" + phonenumber + '\'' +
                 '}';
+    }
+
+    public String getTestcase() {
+        return testcase;
+    }
+
+    public BrowserType getBrowser() {
+        return browser;
+    }
+
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public boolean isFTE() {
+        return isFTE;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public String getPhonenumber() {
+        return phonenumber;
     }
 }
