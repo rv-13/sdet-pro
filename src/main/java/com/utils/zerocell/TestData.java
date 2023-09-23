@@ -2,14 +2,16 @@ package com.utils.zerocell;
 
 import com.creditdatamw.zerocell.annotation.Column;
 import com.utils.enums.BrowserType;
+import lombok.ToString;
 
 import java.time.LocalDate;
 
+@ToString
 public class TestData {
 
     //POJO
 
-    @Column(name = "testcase", index = 0)
+    @Column(name = "TC", index = 0)
     private String testcase;
 
     @Column(name = "browser", index = 1, converterClass = StringToBrowserTypeConverter.class)
@@ -29,19 +31,6 @@ public class TestData {
 
     @Column(name = "phonenumber", index = 6, converterClass = PhoneNumberProcessor.class)
     private String phonenumber;
-
-    @Override
-    public String toString() {
-        return "TestData{" +
-                "testcase='" + testcase + '\'' +
-                ", browser='" + browser + '\'' +
-                ", firstname='" + firstname + '\'' +
-                ", isFTE=" + isFTE +
-                ", age=" + age +
-                ", date=" + date +
-                ", phonenumber='" + phonenumber + '\'' +
-                '}';
-    }
 
     public String getTestcase() {
         return testcase;
