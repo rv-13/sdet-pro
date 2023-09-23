@@ -1,12 +1,19 @@
 package com.utils.zerocell;
 
 import com.creditdatamw.zerocell.annotation.Column;
+import com.creditdatamw.zerocell.converter.BooleanConverter;
+import com.creditdatamw.zerocell.converter.IntegerConverter;
 import com.utils.enums.BrowserType;
+import io.github.sskorol.data.Sheet;
+import lombok.Getter;
 import lombok.ToString;
 
 import java.time.LocalDate;
+import java.util.List;
 
+@Getter
 @ToString
+@Sheet(name = "Sheet1")
 public class TestData {
 
     //POJO
@@ -32,31 +39,4 @@ public class TestData {
     @Column(name = "phonenumber", index = 6, converterClass = PhoneNumberProcessor.class)
     private String phonenumber;
 
-    public String getTestcase() {
-        return testcase;
-    }
-
-    public BrowserType getBrowser() {
-        return browser;
-    }
-
-    public String getFirstname() {
-        return firstname;
-    }
-
-    public boolean isFTE() {
-        return isFTE;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public LocalDate getDate() {
-        return date;
-    }
-
-    public String getPhonenumber() {
-        return phonenumber;
-    }
 }
